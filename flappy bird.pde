@@ -1,17 +1,18 @@
 float[] values;
 int index;
-int space=0; 
-int spacing = 10;
+int space = 10; //this was important to change space
+
 void setup() {
-  size(600, 400);
+  size(600, 250);
   background(0);
-  values = new float[width/spacing];
-  index = 0;
   frameRate(30);
+
+  values = new float[width/1];
+  index = 0;
 }
 
 float maybeRandomHeight() {
-  if (space%10==0) {
+  if (space%50==0) {  //changing the speed was key
     return random(height/3, 2*height/3);
   } else {
     return 0;
@@ -20,6 +21,7 @@ float maybeRandomHeight() {
 
 void draw() {
   background(255);
+
   values[index] = maybeRandomHeight();
   index = index + 1;
   if (index >= values.length) {
@@ -31,10 +33,10 @@ void draw() {
     if (realIndex >= values.length) {
       realIndex -= values.length;
     }
-    line(i*spacing, height-values[realIndex], i*spacing, height);
-    if(values[realIndex]!=0) {
-    line(i*spacing, height-values[realIndex]-60, i*spacing,0);
-   }
-}
-space++;
+    line(i*1, height-values[realIndex], i*1, height);
+    if (values[realIndex]!=0) {
+      line(i*1, height-values[realIndex]-50, i*1, 0);
+    }
+  }
+  space++; //and you had to add one in order to get it to work
 }
