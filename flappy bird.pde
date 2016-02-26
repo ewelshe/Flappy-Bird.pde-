@@ -1,7 +1,7 @@
 float[] values;
 int index;
-int space = 60; //this was important to change space
-int y =100; //this is for the bird mouse pressed
+int space = 60; //changes space
+int y =100; //mouse pressed for the bird 
 
 void setup() {
   size(600, 250);
@@ -13,7 +13,7 @@ void setup() {
 }
 
 float maybeRandomHeight() {
-  if (space%60==0) {  //changing the speed was key // creates even spacing based the fact that it equals zero
+  if (space%60==0) {  //changing the speed was key // even spacing
     return random(height/3, 2*height/3);
   } else {
     return 0;
@@ -27,12 +27,12 @@ fill(230,242,154);
   ellipse(36, y-2, 3,3); 
   ellipse(18, y, 6,10); 
 
-  y = y + 1; //this is the gravity of the bird falling down
+  y = y + 1; 
   //the bigger the number you add to Y the faster it will go down
   //
   if (mousePressed) {
     ellipse (30, y, 6, 10);
-    y= y - 5; //this is the part that makes the circle go up subtract
+    y= y - 5; //circle goes up here 
   }
   
   //if () { // if the ellipse is out of the gap 
@@ -58,12 +58,8 @@ fill(230,242,154);
   }
   space++; //and you had to add one in order to get it to work
 }
+//Group: Nathaniel and Hugo
+// we added spacing and changed the frame rate to increase speed and space 
+// I created different ellipses and put an ellipse underneath mouse pressed so the bird flaps its wings 
+// I kind of figured out how to make it so if it is out of the space between the lines it starts over, but I couldnt figure out the correct way to write that. 
 
-//debug
-//abduct: prep for bird placement
-//1) change i value to create to 50 result: nothing good
-//2) change i value to 3 result: more bad slow feed
-//3) change the speed to progress cirlce: from 30 to 38 result: good
-//4) change the size of the space for the lines 50 to 65 result: good
-
-//if you want to move the 
