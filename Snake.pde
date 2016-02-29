@@ -69,11 +69,11 @@ void draw() {
       if (nextX == foodA && nextY == foodB) {
         getFood();
       }
-      if (0 > xSegments[0] | nextX ==  width) {
+      if (0 > xSegments[0] || xSegments[0] >=  width/gridSize) {
         setup(); //the first part of the if statement constrains the snake on the
         //x and y axis at 0, and resets but i cant figure out how to constrain it at x=500 or y=500
       }
-      if (0 > ySegments[0] | nextY == height) {
+      if (0 > ySegments[0] ||  ySegments[0] >= height/gridSize) {
         setup();
       }
       if (nextX == foodX && nextY == foodY) {
@@ -126,7 +126,6 @@ void keyPressed() {
       xSpeed = -1;
     }
   }
-}
 }
 
 //I tried to create a new ellipse for the snake to eat. I tried to make a new variable A,B. it didnt work so i copied the ellipse code and it worked. 
