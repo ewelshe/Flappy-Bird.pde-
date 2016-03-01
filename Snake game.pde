@@ -127,3 +127,10 @@ void keyPressed() {
     }
   }
 }
+
+//I tried to create a new ellipse for the snake to eat. I tried to make a new variable A,B. it didnt work so i copied the ellipse code and it worked. 
+//Now i need to figure out how to move the circle, I changed the grid size in the ellipse code and it moved it
+// The rectangle only goes through the circle but doesnt eat it
+// I added a boundry to one side of the code to make it start over when it hits the wall.
+//I decreased the number between moves to make it increase speed each time 
+
